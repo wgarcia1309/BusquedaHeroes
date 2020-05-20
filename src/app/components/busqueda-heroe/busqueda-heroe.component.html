@@ -1,0 +1,24 @@
+<div class="row">
+<div class="col-md-4" *ngFor="let heroe of heroes">
+<h1>{{heroe.nombre | uppercase }} <small>{{heroe.aparicion | date: 'y'}}</small></h1>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <img class="col-12" [src]="heroe.img" [alt]="heroe.nombre">
+    </div>
+    <div class="col-6">
+        <h3>{{heroe.nombre}}</h3>
+        <hr>
+        <p>
+            {{heroe.bio}}
+        </p>
+        <div class="col-12">
+            <img *ngIf="heroe.casa == 'DC' " src="../../../assets/img/dc.jfif" alt="">
+            <img *ngIf="heroe.casa == 'Marvel' " src="../../../assets/img/marvel.png" alt="">
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<br><br>
+<a [routerLink]="['/heroes']" class="btn btn-outline-primary"> Regresar</a>
